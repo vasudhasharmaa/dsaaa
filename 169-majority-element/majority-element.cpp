@@ -11,13 +11,14 @@ public:
             {
                 count++;
             }
-            if(candidate!=nums[i])
+            else if(candidate!=nums[i])
             {
                 count--;
             }
             if(count==0)
             {
-                candidate=nums[i+1];
+                candidate=nums[i];
+                count=1;
             }
         }
         return candidate;
