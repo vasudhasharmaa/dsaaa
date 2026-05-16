@@ -11,10 +11,7 @@ public:
 
             if(nums[low]<=nums[mid])
             {
-                if(nums[low]<smallest)
-                {
-                    smallest=nums[low];
-                }
+                smallest=min(smallest,nums[low]);
                 low=mid+1;
             }
             else
