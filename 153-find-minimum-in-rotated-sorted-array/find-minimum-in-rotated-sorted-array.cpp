@@ -8,7 +8,7 @@ public:
         while(low<=high)
         {
             int mid=(low+high)/2;
-          
+
             if(nums[low]<=nums[mid])
             {
                 if(nums[low]<smallest)
@@ -19,11 +19,8 @@ public:
             }
             else
             {
-                if(nums[low]>nums[mid]||nums[mid]>nums[high])
-                {
-                    low++;
-                    high--;
-                }
+                low++;
+                high--;
             }
             
             
