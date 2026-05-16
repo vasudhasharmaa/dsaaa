@@ -19,9 +19,13 @@ public:
             }
             else
             {
-                low++;
-                high--;
+                if(nums[low]>nums[mid]||nums[mid]>nums[high])
+                {
+                    low++;
+                    high--;
+                }
             }
+            
             
         }
         return smallest;
