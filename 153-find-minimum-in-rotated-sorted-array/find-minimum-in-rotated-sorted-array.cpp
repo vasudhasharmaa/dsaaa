@@ -20,6 +20,7 @@ public:
             else
             {
                 low++;
+                high--;
             }
             
         }
