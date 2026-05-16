@@ -16,9 +16,14 @@ public:
             }
             else
             {
-                smallest=min(smallest,nums[mid]);
+                if(nums[mid]<smallest)
+                {
+                    smallest=nums[mid];
+                }
                 high=mid-1;
             }
+
+
             
             
         }
