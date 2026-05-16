@@ -19,8 +19,8 @@ public:
             }
             else
             {
-                low++;
-                high--;
+                smallest=min(smallest,nums[mid]);
+                high=mid-1;
             }
             
             
