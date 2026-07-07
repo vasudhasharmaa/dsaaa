@@ -1,21 +1,23 @@
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
-      
-        int i = 0;
-        int count=0;
+        int index=0;//keeps track of zero occurence 
+
         int n=nums.size();
-        while (i < nums.size()) {
-            if(count==n) break;
-            if (nums[i] == 0) {
-                nums.erase(nums.begin() + i);
-                nums.push_back(0);
-                
-            }else{
-                i++;
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]!=0)
+            {
+                nums[index]=nums[i];
+                index++;
             }
-            count++;
-            
         }
+        while(index<n)
+        {
+            nums[index]=0;
+            index++;
+
+        }
+     
     }
 };
