@@ -38,7 +38,7 @@ void dfs(int r,int c,vector<vector<int>>&vis,vector<vector<char>>&grid,int drow[
         }
         for(int i=0;i<n;i++)
         {
-            if(grid[i][0]=='1'&&vis[i][0]=='1')
+            if(grid[i][0]=='1'&&vis[i][0]!=1)
             {
                 dfs(i,0,vis,grid,drow,dcol);
                 count++;
