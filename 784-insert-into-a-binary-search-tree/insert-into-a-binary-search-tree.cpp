@@ -22,7 +22,7 @@ public:
                 else
                 {
                     curr->left=new TreeNode(val);
-                    return root;
+                    break;
                 }
             }
             if(val>curr->val)
@@ -31,7 +31,7 @@ public:
                 else
                 {
                     curr->right=new TreeNode(val);
-                    return root;
+                    break;
                 }
             }
         }
