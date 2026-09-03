@@ -24,20 +24,24 @@ public:
     }*/
     int minimumTotal(vector<vector<int>>& triangle) {
         int m = triangle.size();
-        vector<vector<int>> dp(m, vector<int>(m, INT_MAX));
-        
-        for (int j = 0; j < m; j++) {
-            dp[m - 1][j] = triangle[m - 1][j];
+        vector<int>dp(m,INT_MAX);
+        int sum=0;
+        for(int j=0;j<m;j++)
+        {
+            dp[j]=triangle[m-1][j];
         }
-        for (int i = m - 2; i >= 0; i--) {
+        for(int i=m-2;i>=0;i--)
+        {
+            vector<int>temp(m);
+            for(int j=0;j<=i;j++)
+            {
+                int choose=min(dp[j],dp[j+1]);
+                temp[j]=choose+triangle[i][j];
 
-            for (int j = 0; j <= i; j++) {
-                int down = triangle[i][j] + dp[i + 1][j];
-                int dia = triangle[i][j] + dp[i + 1][j + 1];
-                int choose = min(down, dia);
-                dp[i][j]=choose;
+
             }
+            dp=temp;
         }
-        return dp[0][0];
+        return dp[0];
     }
 };
